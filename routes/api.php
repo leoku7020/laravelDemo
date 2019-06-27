@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-
+require('Api/member.php');
 
 Route::group([
 
