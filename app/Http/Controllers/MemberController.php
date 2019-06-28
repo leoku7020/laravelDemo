@@ -51,6 +51,18 @@ class MemberController extends Controller
      *          "message": "user is exist",
      *          "errors": []
      *     }
+     * @response 422
+     *     {
+     *          "url": "http://backend.test/api/v1/member/register",
+     *          "method": "POST",
+     *          "code": 422,
+     *          "message": "The given data was invalid.",
+     *          "errors": {
+     *              "account": [
+     *                  "The account field is required."
+     *              ]
+     *          }
+     *     }
      * @response 500
      *     {
      *          "url": "http://backend.test/api/v1/member/register",
@@ -100,6 +112,18 @@ class MemberController extends Controller
      *          "code": 401,
      *          "message": "Unauthorized",
      *          "errors": []
+     *     }
+     * @response 422
+     *     {
+     *          "url": "http://backend.test/api/v1/member/login",
+     *          "method": "POST",
+     *          "code": 422,
+     *          "message": "The given data was invalid.",
+     *          "errors": {
+     *              "account": [
+     *                  "The account field is required."
+     *              ]
+     *          }
      *     }
      * @response 500
      *     {
