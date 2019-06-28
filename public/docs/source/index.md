@@ -20,6 +20,82 @@ Welcome to the generated API reference.
 
 <!-- END_INFO -->
 
+#User Login
+Login
+<!-- START_de2237895b7c9a6a981c1b1616dd29b6 -->
+## api/v1/member/login
+> Example request:
+
+```bash
+curl -X POST "/api/v1/member/login" \
+    -H "Content-Type: application/json" \
+    -d '{"account":"ducimus","password":"dicta"}'
+
+```
+
+```javascript
+const url = new URL("/api/v1/member/login");
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "account": "ducimus",
+    "password": "dicta"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{}
+```
+> Example response (401):
+
+```json
+{
+    "url": "http:\/\/backend.test\/api\/v1\/member\/login",
+    "method": "POST",
+    "code": 401,
+    "message": "Unauthorized",
+    "errors": []
+}
+```
+> Example response (500):
+
+```json
+{
+    "url": "http:\/\/backend.test\/api\/v1\/member\/login",
+    "method": "POST",
+    "code": 500,
+    "message": "DB error",
+    "errors": []
+}
+```
+
+### HTTP Request
+`POST api/v1/member/login`
+
+#### Body Parameters
+
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    account | string |  required  | Account
+    password | string |  required  | Password
+
+<!-- END_de2237895b7c9a6a981c1b1616dd29b6 -->
+
 #User Register
 Register New User
 <!-- START_ab484852d4348050a5dc4e5ea987ed42 -->
@@ -29,7 +105,7 @@ Register New User
 ```bash
 curl -X POST "/api/v1/member/register" \
     -H "Content-Type: application/json" \
-    -d '{"name":"quod","address":"ex","phone":"delectus","account":"et","password":"dolorem","mail":"est"}'
+    -d '{"name":"accusamus","address":"alias","phone":"ad","account":"ut","password":"nam","mail":"molestias"}'
 
 ```
 
@@ -42,12 +118,12 @@ let headers = {
 }
 
 let body = {
-    "name": "quod",
-    "address": "ex",
-    "phone": "delectus",
-    "account": "et",
-    "password": "dolorem",
-    "mail": "est"
+    "name": "accusamus",
+    "address": "alias",
+    "phone": "ad",
+    "account": "ut",
+    "password": "nam",
+    "mail": "molestias"
 }
 
 fetch(url, {

@@ -74,4 +74,47 @@ class MemberController extends Controller
 
         return response()->json($this->out->successFormat($result));
     }
+    /**
+     * @group User Login
+     * Login
+     * @apiHeader {string} Content-Type application/json
+     * @apiHeader {string} Accept application/json
+     * @bodyParam account string required Account
+     * @bodyParam password string required Password
+     * @response
+     *     {
+     *          "url": "http://backend.test/api/v1/member/login",
+     *          "method": "POST",
+     *          "code": 100,
+     *          "message": "Get something successful.",
+     *          "data": {
+     *              "auth_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODIwMFwvYXBpXC92MVwvbWVt
+     *              YmVyXC9sb2dpbiIsImlhdCI6MTU2MTY5MzY1NSwiZXhwIjoxNTYxNjk3MjU1LCJuYmYiOjE1NjE2OTM2NTUsImp0aSI6IkZURnJRSWEwVHF1Yko4
+     *              RFQiLCJzdWIiOjEsInBydiI6Ijg2NjVhZTk3NzVjZjI2ZjZiOGU0OTZmODZmYTUzNmQ2OGRkNzE4MTgifQ.sNbxvvHuNGdkoukxirKXPbJBK9ulng64IH4ih31P_EE"
+     *          }
+     *     }
+     * @response 401
+     *     {
+     *          "url": "http://backend.test/api/v1/member/login",
+     *          "method": "POST",
+     *          "code": 401,
+     *          "message": "Unauthorized",
+     *          "errors": []
+     *     }
+     * @response 500
+     *     {
+     *          "url": "http://backend.test/api/v1/member/login",
+     *          "method": "POST",
+     *          "code": 500,
+     *          "message": "DB error",
+     *          "errors": []
+     *     }
+     */
+    public function login(MemberRequest $request)
+    {
+        $attributes = $request->only('account', 'password', 'type');
+        $result['auth_token'] = $this->service->login($attributes);
+    
+        return response()->json($this->out->successFormat($result));
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Repositories\MemberRepository;
 use App\Exceptions\ErrorException;
+use JWTAuth;
 
 class MemberService
 {
@@ -23,5 +24,14 @@ class MemberService
         }
 
         return $this->repository->create($attributes);
+    }
+
+    public function login($attributes)
+    {
+        if (! $token = JWTAuth::attempt($attributes)) {
+            throw new ErrorException('Unauthorized', 401);
+        }
+
+        return $token;
     }
 }

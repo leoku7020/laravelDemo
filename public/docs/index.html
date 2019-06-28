@@ -48,6 +48,88 @@
 <p>Welcome to the generated API reference.
 <a href="http://localhost/docs/collection.json">Get Postman Collection</a></p>
 <!-- END_INFO -->
+<h1>User Login</h1>
+<p>Login</p>
+<!-- START_de2237895b7c9a6a981c1b1616dd29b6 -->
+<h2>api/v1/member/login</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "/api/v1/member/login" \
+    -H "Content-Type: application/json" \
+    -d '{"account":"ducimus","password":"dicta"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL("/api/v1/member/login");
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "account": "ducimus",
+    "password": "dicta"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{}</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "url": "http:\/\/backend.test\/api\/v1\/member\/login",
+    "method": "POST",
+    "code": 401,
+    "message": "Unauthorized",
+    "errors": []
+}</code></pre>
+<blockquote>
+<p>Example response (500):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "url": "http:\/\/backend.test\/api\/v1\/member\/login",
+    "method": "POST",
+    "code": 500,
+    "message": "DB error",
+    "errors": []
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/v1/member/login</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account</td>
+<td>string</td>
+<td>required</td>
+<td>Account</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>required</td>
+<td>Password</td>
+</tr>
+</tbody>
+</table>
+<!-- END_de2237895b7c9a6a981c1b1616dd29b6 -->
 <h1>User Register</h1>
 <p>Register New User</p>
 <!-- START_ab484852d4348050a5dc4e5ea987ed42 -->
@@ -57,7 +139,7 @@
 </blockquote>
 <pre><code class="language-bash">curl -X POST "/api/v1/member/register" \
     -H "Content-Type: application/json" \
-    -d '{"name":"quod","address":"ex","phone":"delectus","account":"et","password":"dolorem","mail":"est"}'
+    -d '{"name":"accusamus","address":"alias","phone":"ad","account":"ut","password":"nam","mail":"molestias"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL("/api/v1/member/register");
 
@@ -67,12 +149,12 @@ let headers = {
 }
 
 let body = {
-    "name": "quod",
-    "address": "ex",
-    "phone": "delectus",
-    "account": "et",
-    "password": "dolorem",
-    "mail": "est"
+    "name": "accusamus",
+    "address": "alias",
+    "phone": "ad",
+    "account": "ut",
+    "password": "nam",
+    "mail": "molestias"
 }
 
 fetch(url, {

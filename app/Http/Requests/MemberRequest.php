@@ -32,6 +32,11 @@ class MemberRequest extends FormRequest
                 'password' => 'required',
                 'mail' => 'required'
             ];
+        } else if($this->route()->getName() == "login") {
+            return [
+                'account' => 'required',
+                'password' => 'required'
+            ];
         } else {
             return [
                 //
