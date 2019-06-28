@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash","javascript"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Welcome to the generated API reference.
+<a href="http://localhost/docs/collection.json">Get Postman Collection</a></p>
+<!-- END_INFO -->
+<h1>User Register</h1>
+<p>Register New User</p>
+<!-- START_ab484852d4348050a5dc4e5ea987ed42 -->
+<h2>api/v1/member/register</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST "/api/v1/member/register" \
+    -H "Content-Type: application/json" \
+    -d '{"name":"quod","address":"ex","phone":"delectus","account":"et","password":"dolorem","mail":"est"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL("/api/v1/member/register");
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+}
+
+let body = {
+    "name": "quod",
+    "address": "ex",
+    "phone": "delectus",
+    "account": "et",
+    "password": "dolorem",
+    "mail": "est"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "url": "http:\/\/backend.test\/api\/v1\/member\/register",
+    "method": "POST",
+    "code": 100,
+    "message": "Get something successful.",
+    "data": {
+        "name": "Eric",
+        "address": "台北市一號",
+        "phone": "0987123456",
+        "account": "Eric.ku@gmail.com",
+        "mail": "Eric.ku@gmail.com",
+        "updated_at": "2019-06-28 02:23:12",
+        "created_at": "2019-06-28 02:23:12",
+        "id": 1
+    }
+}</code></pre>
+<blockquote>
+<p>Example response (101):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "url": "http:\/\/backend.test\/api\/v1\/member\/register",
+    "method": "POST",
+    "code": 101,
+    "message": "user is exist",
+    "errors": []
+}</code></pre>
+<blockquote>
+<p>Example response (500):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "url": "http:\/\/backend.test\/api\/v1\/member\/register",
+    "method": "POST",
+    "code": 500,
+    "message": "DB error",
+    "errors": []
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/v1/member/register</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>required</td>
+<td>Name</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>required</td>
+<td>Address</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td>required</td>
+<td>Number</td>
+</tr>
+<tr>
+<td>account</td>
+<td>string</td>
+<td>required</td>
+<td>Account</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>required</td>
+<td>Password</td>
+</tr>
+<tr>
+<td>mail</td>
+<td>string</td>
+<td>required</td>
+<td>Mail</td>
+</tr>
+</tbody>
+</table>
+<!-- END_ab484852d4348050a5dc4e5ea987ed42 -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>

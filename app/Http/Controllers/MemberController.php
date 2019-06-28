@@ -16,15 +16,17 @@ class MemberController extends Controller
     }
 
     /**
-     * @api {post} /api/v1/member/register user register
-     * @apiGroup User
-     * @apiDescription Register New User
+     * @group User Register
+     * Register New User
      * @apiHeader {string} Content-Type application/json
      * @apiHeader {string} Accept application/json
-     * @apiParam {int} page page (default is 1)
-     * @apiParam {int} page page (default is 1)
-     * @apiSuccessExample {json} Success-Response:
-     *     HTTP/1.1 200 OK
+     * @bodyParam name string required Name
+     * @bodyParam address string required Address
+     * @bodyParam phone string required Number
+     * @bodyParam account string required Account
+     * @bodyParam password string required Password
+     * @bodyParam mail string required Mail
+     * @response
      *     {
      *          "url": "http://backend.test/api/v1/member/register",
      *          "method": "POST",
@@ -41,8 +43,7 @@ class MemberController extends Controller
      *              "id": 1
      *          }
      *     }
-     * @apiErrorExample {json} Error-Response: user is exist
-     *     HTTP/1.1 200 OK
+     * @response 101
      *     {
      *          "url": "http://backend.test/api/v1/member/register",
      *          "method": "POST",
@@ -50,8 +51,7 @@ class MemberController extends Controller
      *          "message": "user is exist",
      *          "errors": []
      *     }
-     * @apiErrorExample {json} Error-Response: db error
-     *     HTTP/1.1 200 OK
+     * @response 500
      *     {
      *          "url": "http://backend.test/api/v1/member/register",
      *          "method": "POST",
