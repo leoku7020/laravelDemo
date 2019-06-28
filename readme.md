@@ -8,3 +8,6 @@
 
 ## Api Doc
  - localhost:8000/docs/index.html
+
+## Log Viewer
+ - localhost:8000/logs
