@@ -19,7 +19,7 @@ class CreateMembersTable extends Migration
             $table->string('address', 300);
             $table->string('phone', 10);
             $table->string('account', 50);
-            $table->string('password', 50);
+            $table->string('password', 255);
             $table->string('mail', 30);
             $table->timestamps();
         });

@@ -2,13 +2,23 @@
 
 namespace App\Repositories;
 
-use App\Model\Member;
+use App\Models\Member;
 
-class MemberRepository extends Model
+class MemberRepository
 {
     //
     public function __construct(Member $model)
     {
         $this->model = $model;
+    }
+
+    public function create($attributes)
+    {
+        return $this->model->create($attributes);
+    }
+
+    public function findByAccount($account, $columns = ['*'])
+    {
+        return $this->model->where('account', $account)->get($columns);
     }
 }
