@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 */
 
 require('Api/member.php');
+require('Api/company.php');
 
 Route::group([
 

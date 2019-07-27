@@ -1,9 +1,13 @@
 ## 初始化
  - $ cp .env.example .env
- - Setting db
+ - $ php artisan key:generate
  - $ composer install
+
+## Setting db
  - $ php artisan migrate
  - $ php artisan api:generate
+ 
+## Running Server
  - $ php artisan serve
 
 ## Api Doc
